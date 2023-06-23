@@ -17,7 +17,7 @@
         if(!empty($email)&&!empty($p)&&!empty($fullname)){
             echo "<pre>";
             
-            $sql = "insert into `users` (`fullname`, `email`, `password`) values('$fullname', '$email','$p')";
+            $sql = "insert into `users` (`fullname`, `email`, `password`) values('$fullname', '$email',md5'$p')";
             if($conn->query($sql) === true){
                 echo "Đăng ký thành công";
                 echo "<pre>";
